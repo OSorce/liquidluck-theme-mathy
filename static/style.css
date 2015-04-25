@@ -223,6 +223,11 @@ header {
     }
 }
 
+/* override yue.css */
+
+.yue blockquote {
+    text-align: center;
+}
 
 /* Console and board */
 
