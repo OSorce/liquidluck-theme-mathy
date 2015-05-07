@@ -13,6 +13,8 @@ lang = 'en'
 
 navigation = [
     {'title': 'Home', 'link': '/'},
+    {'title': 'Lab', 'link': '/lab.html'},
+    {'title': 'Translate', 'link': '/translate/'},
     {'title': 'About', 'link': '/about.html'},
 ]
 

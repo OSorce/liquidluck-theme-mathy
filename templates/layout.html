@@ -5,9 +5,9 @@
     <title>{% block title %}{{site.name}}{% endblock %}</title>
     <script>if (top !== self) top.location = self.location;</script>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="{{static_url('yue.css')}}" />
-    <link rel="stylesheet" href="{{static_url('pygments.css')}}" />
-    <link rel="stylesheet" href="{{static_url('style.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/yue.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/pygments.css')}}" />
+    <link rel="stylesheet" href="{{static_url('site/blog.thxminds.com/style.css')}}" />
     {% if site.feed -%}
     <link rel="alternate" type="application/rss+xml" href="{{site.feed}}" title="{{site.name}}" />
     {% else %}
@@ -35,7 +35,7 @@
         (function() {
           var hm = document.createElement("script");
           hm.src = "//hm.baidu.com/hm.js?{{ theme.baidu_analytics }}";
-          var s = document.getElementsByTagName("script")[0]; 
+          var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
         })();
     </script>
@@ -65,7 +65,6 @@
 
     <footer id="footer">
       {%- block footer %}
-      <div class="end"></div>
       {% if theme.elsewhere -%}
       <nav class="elsewhere">
         {% for item in theme.elsewhere -%}
@@ -92,7 +91,7 @@
     </script-->
 
     {%- block beforejs %}{% endblock %}
-    <script type="text/javascript" src="{{ static_url('mobile.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/mobile.js') }}"></script>
     {% block afterjs %}{% endblock %}
 
   </body>

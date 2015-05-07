@@ -20,7 +20,7 @@
         <div class="entry-item">
             <time class="updated" datetime="{{item.date|xmldatetime}}">{{item.date.strftime('%Y-%m-%d')}}</time>
             <a href="{{item|permalink}}">{{item.title}}</a>
-            <blockquote>{{item.description}}</blockquote>
+            <!--p class="entry-description"><small>{{item.description}}</small></p-->
         </div>
         {% endfor %}
     </div>

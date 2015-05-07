@@ -7,9 +7,21 @@
 {% endblock %}
 
 {% block main -%}
+{%if post.cover %}
+    <div class="cover">
+        <img class="cover-image" style="background-image: url('{{post.cover}}')">
+    </div>
+{%endif%}
 <div class="container yue">
     <div class="hentry"{%if post.review%} itemscope itemtype="http://data-vocabulary.org/Review"{%endif%}>
-        <h1 class="entry-title">{{post.title}}</h1>
+        
+        <div class="entry-header">
+            <h1 class="entry-title">{{post.title}}</h1>
+        
+            <div class="entry-description">
+                <p itemprop="headline"><small>{{post.description}}</small></p>
+            </div>
+        </div>
 
         <div class="entry-meta">
             <time class="updated" datetime="{{post.date|xmldatetime}}"{%if post.review%} itemprop="dtreviewed"{%endif%} pubdate>
@@ -28,7 +40,6 @@
             {{post.content}}
         </div>
 
-
         {% if post.review %}
         <div class="entry-review">
             <span itemprop="itemreviewed">{{post.review}}</span> Reviewed by <span itemprop="reviewer">{{post.author.name}}</span> {%if post.rating%}, Rating <span itemprop="rating">{{post.rating}}</span>{%endif%}
@@ -45,6 +56,8 @@
     </div>
 </div>
 
+    <div class="yue">
+
         {% if theme.disqus -%}
         {%- if theme.allow_comment_on_secret_post or post.public %}
         <div id="disqus_thread"></div>
@@ -59,19 +72,22 @@
         </script>
         {% endif -%}
         {%- endif %}
+    
+    </div>
+
         <div class="toc">
             <div class="toc-title">
                 <p><strong>目录</strong></p>
             </div>
             <div class="toc-content">
-            
+
             </div>
         </div>
 {%- endblock %}
 
 {%- block beforejs %}
-    <script type="text/javascript" src="{{ static_url('jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ static_url('itoc.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/itoc.js') }}"></script>
 {% endblock %}
 
 {% block afterjs %}
